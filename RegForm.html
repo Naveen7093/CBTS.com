@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link rel="stylesheet" href="RegForm.css">
+    <title>Sign-in Page </title>
+</head>
+
+<body>
+   
+
+    <div class="container" id="container">
+        
+        <div class="form-container sign-in">
+            <form action="home.html">
+                <h1>Sign In</h1>
+                <div class="social-icons">
+                    <a href="https://www.google.com/" class="icon"><i class="fa-brands fa-google-plus-g"></i></a>
+                    <a href="https://www.facebook.com/campaign/landing.php?campaign_id=14884913640&extra_
+                    1=s%7Cc%7C550525804791%7Cb%7Cfacebook%7C&placement=&creative=550525804791&keyword=
+                    facebook&partner_id=googlesem&extra_2=campaignid%3D14884913640%26adgroupid%3D128696220912%
+                    26matchtype%3Db%26network%3Dg%26source%3Dnotmobile%26search_or_content%3Ds%26device%3Dc%
+                    26devicemodel%3D%26adposition%3D%26target%3D%26targetid%3Dkwd-592856129%26loc_physical_ms%
+                    3D1007743%26loc_interest_ms%3D%26feeditemid%3D%26param1%3D%26param2%3D&gad_source=1&gclid=
+                    Cj0KCQiAz8GuBhCxARIsAOpzk8xTrlGs3iuolMAt_8zxOwRFbllpk9CcmMW0wbNO7tk3GT1UMbMguBMaAqUaEALw_wcB" class="icon"><i class="fa-brands fa-facebook-f"></i></a>
+                    <a href="https://github.com/" class="icon"><i class="fa-brands fa-github"></i></a>
+                    <a href="https://in.linkedin.com/?src=go-pa&trk=sem-ga_campid.14650114788_asid.150089839322_
+                    crid.656569072777_kw.www%20linkedin_d.c_tid.kwd-2246447582_n.g_mt.e_geo.1007743&mcid=6844056167778418689&
+                    cid=&gad_source=1&gclid=Cj0KCQiAz8GuBhCxARIsAOpzk8whzRFn8SomaFoMTdWvaMmvc6DY-3K8oNPw1FVvGbl-eixxAoQw_a8aAmM-
+                    EALw_wcB&gclsrc=aw.ds" class="icon"><i class="fa-brands fa-linkedin-in"></i></a>
+                </div>
+                <span><b>or Use Your Email and College ID card Number</b></span>
+                <input type="email" placeholder="Email">
+                <input type="text" placeholder="Enter ID No">
+                <button id="submit" onclick="redirectToLogin()">Sign In</button>
+            </form>
+        </div>
+       
+    </div>
+
+    <script>
+        function redirectToLogin(){
+            history.back();
+        }
+    </script>
+</body>
+
+</html>

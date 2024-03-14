@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Google Maps Integration with Bus Routes</title>
+    <style>
+        #map {
+            height: 400px;
+            width: 100%;
+        }
+
+        #info {
+            margin-top: 10px;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: #ffffff;
+            color: #000000;
+            padding: 20px;
+            text-align: center;
+        }
+
+        nav {
+            background-color: #41939a;
+            overflow: hidden;
+        }
+
+        nav a {
+            float: left;
+            display: block;
+            color: white;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+        }
+
+    </style>
+</head>
+<body>
+    <header>
+    <h1>College Bus Tracking System</h1>
+    <h2>Google Maps Integration with Bus Routes</h2>
+        </header>
+    <nav>
+        <a href="home.html">Home</a>
+        <a href="GPS.html">Live Map</a>
+        <a href="routes.html">Bus Routes</a>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+    </nav>
+
+    
+    <!-- Add an empty div to hold the map -->
+    <div id="map"></div>
+
+    <!-- Display latitude and longitude information -->
+    <div id="info">
+        <strong>Marker Position:</strong>
+        <p id="position"></p>
+    </div>
+
+    <!-- Include the Google Maps JavaScript API with your API Key -->
+    <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&callback=initMap" async defer></script>
+
+    <script>
+        // Sample bus routes (latitude, longitude)
+        var busRoute1 = [
+            { lat: 37.7749, lng: -122.4194 },
+            { lat: 37.7755, lng: -122.4188 },
+            { lat: 37.7760, lng: -122.4182 },
+            // Add more points for your route
+        ];
+
+        var busRoute2 = [
+            { lat: 37.7749, lng: -122.4194 },
+            { lat: 37.7745, lng: -122.4198 },
+            { lat: 37.7740, lng: -122.4202 },
+            // Add more points for your route
+        ];
+
+        // Initialize the map
+        function initMap() {
+            // Set the initial position (e.g., your college location)
+            var collegeLocation = { lat: 37.7749, lng: -122.4194 };
+
+            // Create a new map centered at the college location
+            var map = new google.maps.Map(document.getElementById('map'), {
+                center: collegeLocation,
+                zoom: 15
+            });
+
+            // Add a draggable marker for the college location
+            var marker = new google.maps.Marker({
+                position: collegeLocation,
+                map: map,
+                title: 'College Location',
+                draggable: true
+            });
+
+            // Add a listener to update position when marker is dragged
+            marker.addListener('dragend', function () {
+                updatePosition(marker.getPosition());
+            });
+
+            // Initial position update
+            updatePosition(collegeLocation);
+
+            // Draw bus routes on the map
+            drawBusRoute(map, busRoute1, 'Bus Route 1');
+            drawBusRoute(map, busRoute2, 'Bus Route 2');
+        }
+
+        // Update the position information
+        function updatePosition(position) {
+            document.getElementById('position').innerHTML = 'Latitude: ' + position.lat() + '<br>Longitude: ' + position.lng();
+        }
+
+        // Draw a bus route on the map
+        function drawBusRoute(map, route, routeName) {
+            var routePath = new google.maps.Polyline({
+                path: route,
+                geodesic: true,
+                strokeColor: '#FF0000',
+                strokeOpacity: 1.0,
+                strokeWeight: 2
+            });
+
+            routePath.setMap(map);
+
+            // Add a label for the route
+            var routeLabel = new google.maps.Marker({
+                position: route[0],
+                label: routeName,
+                map: map
+            });
+        }
+    </script>
+
+</body>
+</html>

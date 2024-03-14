@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>College Bus Tracking System</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-image: url('sietk.jpeg');
+            background-size: cover;
+        }
+
+        header {
+            background-color: #ffffff;
+            color: #000000;
+            padding: 20px;
+            text-align: center;
+        }
+
+       
+        nav {
+            background-color: #41939a;
+            overflow: hidden;
+        }
+
+        nav a {
+            float: left;
+            display: block;
+            color: white;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+        }
+
+        .info-container {
+            max-width: 1200px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: rgb(255, 255, 255);
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+       
+        p {
+            font-size: 18px;
+            font-weight: 500;
+            justify-content:center;    
+        }
+
+        button{
+            background-color: orange;
+            color: #ffffff;
+            border: 0px;
+            border-radius: 5px;
+            padding-left: 5px;
+            padding-top: 2px;
+            padding-right: 5px;
+            padding-bottom: 2px;
+        }
+
+        #about-section {
+            background: transparent;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>College Bus Tracking System</h1>
+        <h2>Siddhath College of Engineering & Technology</h2>
+    </header>
+
+    <nav>
+        <a href="home.html">Home</a>
+        <a href="GPS.html">Live Map</a>
+        <a href="routes.html">Bus Routes</a>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+    </nav>
+
+    <div class="map-container" id="map">
+        <!-- Your map integration (e.g., Google Maps) goes here -->
+        <!-- Replace this comment with your map code -->
+        <!-- Example: <div id="googleMap"></div> -->
+    </div>
+
+    <div class="info-container">
+        
+        <div id="about-section">
+            <h2><u>About Us</u></h2>
+            <p>
+                Welcome to our College Bus Tracking System. We are dedicated to providing a reliable and efficient transportation service for students and staff. Our system 
+                allows you to track the location of buses in real-time, plan your routes, and stay updated on bus schedules. Feel free to explore the features of our system 
+                and reach out to us if you have any questions or feedback.
+            </p>
+
+           <a href="contact.html"><button>Contact Us</button></a>
+        </div>
+    </div>
+
+    <!-- Include your map integration script here -->
+    <!-- Example: <script src="your-map-library.js"></script> -->
+
+</body>
+</html>
